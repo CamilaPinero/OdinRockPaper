@@ -1,0 +1,90 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 20px;
+    background: rgb(238,217,215);
+background: linear-gradient(90deg, rgba(238,217,215,1) 0%, rgba(242,226,186,0.7063200280112045) 35%, rgba(237,231,192,1) 100%);
+font-family: monospace;
+}
+
+.gameState {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.buttons {
+    width: 440px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.results, .score {
+    width: 200px;
+    height: 200px;
+    background-color: #f8f8f8;
+    text-align: center;
+    margin: 20px;
+    border-radius: 8px;
+    padding-top: 10px;
+    font-size: 1.2em;
+}
+
+.btn {
+    width: 122px;
+}
+
+.btn-scissors {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #e47a7a;
+    --bs-btn-border-color: #e47a7a;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #d16969;
+    --bs-btn-hover-border-color: #d16969;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #c06161;
+    --bs-btn-active-border-color: #c06161;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #e78a8a;
+    --bs-btn-disabled-border-color: #e78a8a;
+}
+
+.btn-rock {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #e6c559;
+    --bs-btn-border-color: #e6c559;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #d1b351;
+    --bs-btn-hover-border-color: #d1b351;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #b69b44;
+    --bs-btn-active-border-color: #caae51;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #e6c559;
+    --bs-btn-disabled-border-color: #e6c559;
+}
+
+.btn-paper {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #58c799;
+    --bs-btn-border-color: #58c799;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #4eb187;
+    --bs-btn-hover-border-color: #4eb187;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #459b77;
+    --bs-btn-active-border-color: #459b77;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #459b77;
+    --bs-btn-disabled-border-color: #459b77;
+}

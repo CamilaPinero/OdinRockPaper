@@ -48,7 +48,7 @@ function playRound(playerSelection, computerSelection) {
 function game() {
 	let playerScore = 0;
 	let pcScore = 0;
-	for (let i = 0; i < 3; i++) {
+	for (let i = 0; i < 1; i++) {
 		playRound(getPlayerSelection(), getComputerChoice());
 		if (winner === "player") {
 			playerScore += 1;
