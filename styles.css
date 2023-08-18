@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     align-content: center;
-    margin: 20px;
+    
     background: rgb(238,217,215);
 background: linear-gradient(90deg, rgba(238,217,215,1) 0%, rgba(242,226,186,0.7063200280112045) 35%, rgba(237,231,192,1) 100%);
 font-family: monospace;
@@ -15,14 +15,19 @@ font-family: monospace;
 .gameState {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .buttons {
-    width: 440px;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
+
+    
 }
+
+
 
 .results, .score {
     width: 200px;
@@ -37,6 +42,7 @@ font-family: monospace;
 
 .btn {
     width: 122px;
+    margin: 5px 19px;
 }
 
 .btn-scissors {
@@ -88,4 +94,25 @@ font-family: monospace;
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #459b77;
     --bs-btn-disabled-border-color: #459b77;
+}
+
+footer {
+    position: absolute;
+   bottom: 10px;
+}
+
+@media (max-width: 485px) {
+    .buttons {
+        flex-direction: column;
+    }
+
+    .results, .score {
+        margin: 5px 20px;
+        height: fit-content;
+    }
+
+    .results {
+        min-height: 120px;
+    }
+
 }

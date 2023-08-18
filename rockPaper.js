@@ -1,12 +1,3 @@
-function getComputerChoice() {
-	let choices = ["rock", "paper", "scissors"];
-	return choices[Math.floor(Math.random() * 3)];
-}
-
-/* function getPlayerSelection() {
-	return playerChoice;
-} */
-
 let winner = "";
 let result = "";
 let playerScore = 0;
@@ -15,26 +6,23 @@ let score = document.querySelector("div.score");
 let contentS = document.createElement("p");
 contentS.setAttribute("id", "score");
 
-function gameShouldFinish(playerScore, pcScore) {
-	if (playerScore > 2) {
-		contentS.textContent = "You win the game!";
-		document.getElementById("reset").removeAttribute("hidden");
-		document.querySelector("button.rock").setAttribute("disabled", "");
-		document.querySelector("button.paper").setAttribute("disabled", "");
-		document.querySelector("button.scissors").setAttribute("disabled", "");
-	} else if (pcScore > 2) {
-		contentS.textContent = "You lose the game!";
-		document.getElementById("reset").removeAttribute("hidden");
-		document.querySelector("button.rock").setAttribute("disabled", "");
-		document.querySelector("button.paper").setAttribute("disabled", "");
-		document.querySelector("button.scissors").setAttribute("disabled", "");
-	} else if (playerScore === 2 && pcScore === 2 && playerScore === pcScore) {
-		contentS.textContent = "It's a tie!";
-		document.getElementById("reset").removeAttribute("hidden");
-		document.querySelector("button.rock").setAttribute("disabled", "");
-		document.querySelector("button.paper").setAttribute("disabled", "");
-		document.querySelector("button.scissors").setAttribute("disabled", "");
-	}
+let rock = document.querySelector("button.rock");
+let paper = document.querySelector("button.paper");
+let scissors = document.querySelector("button.scissors");
+
+rock.addEventListener("click", () => {
+	playRound("rock", getComputerChoice());
+});
+paper.addEventListener("click", () => {
+	playRound("paper", getComputerChoice());
+});
+scissors.addEventListener("click", () => {
+	playRound("scissors", getComputerChoice());
+});
+
+function getComputerChoice() {
+	let choices = ["rock", "paper", "scissors"];
+	return choices[Math.floor(Math.random() * 3)];
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -91,19 +79,30 @@ function playRound(playerSelection, computerSelection) {
 	winner = "";
 }
 
-let rock = document.querySelector("button.rock");
-let paper = document.querySelector("button.paper");
-let scissors = document.querySelector("button.scissors");
-
-rock.addEventListener("click", () => {
-	playRound("rock", getComputerChoice());
-});
-paper.addEventListener("click", () => {
-	playRound("paper", getComputerChoice());
-});
-scissors.addEventListener("click", () => {
-	playRound("scissors", getComputerChoice());
-});
+function gameShouldFinish(playerScore, pcScore) {
+	if (playerScore > 2) {
+		contentS.textContent = "You win the game!";
+		contentS.setAttribute("style", "color: #58c799");
+		document.getElementById("reset").removeAttribute("hidden");
+		document.querySelector("button.rock").setAttribute("disabled", "");
+		document.querySelector("button.paper").setAttribute("disabled", "");
+		document.querySelector("button.scissors").setAttribute("disabled", "");
+	} else if (pcScore > 2) {
+		contentS.textContent = "You lose the game!";
+		document.getElementById("reset").removeAttribute("hidden");
+		document.querySelector("button.rock").setAttribute("disabled", "");
+		document.querySelector("button.paper").setAttribute("disabled", "");
+		document.querySelector("button.scissors").setAttribute("disabled", "");
+		contentS.setAttribute("style", "color: #d16969");
+	} else if (playerScore === 2 && pcScore === 2 && playerScore === pcScore) {
+		contentS.textContent = "It's a tie!";
+		document.getElementById("reset").removeAttribute("hidden");
+		document.querySelector("button.rock").setAttribute("disabled", "");
+		document.querySelector("button.paper").setAttribute("disabled", "");
+		document.querySelector("button.scissors").setAttribute("disabled", "");
+		contentS.setAttribute("style", "color: #e6c559");
+	}
+}
 
 function reset() {
 	document.getElementById("reset").setAttribute("hidden", "");
